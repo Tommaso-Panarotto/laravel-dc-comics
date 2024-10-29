@@ -8,16 +8,18 @@
 <div class="row g-3 mt-5">
 @forelse ($plants as $plant )
 <div class="col-4">
-  <div class="card">
+    <a href="{{route("plants.show", $plant->id)}}">
+<div class="card">
       <h4>{{$plant->name}}</h4>
       <div class="card-body">
           <img src="{{$plant->image}}" alt="{{$plant->name}}">
     </div>
   </div>
+</a>
 </div>
 @empty
     <div class="col-12">
-        <h2>Non ci sono passegeri in partenza....</h2>
+        <h2>Non ci sono piante in catalogo....</h2>
     </div>
 @endforelse
 </div>
