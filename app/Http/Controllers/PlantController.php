@@ -16,4 +16,25 @@ class PlantController extends Controller
         $plant = Plant::findOrFail($id);
         return view("plants.show", compact("plant"));
     }
+
+    public function create(){
+        return view("plants.create");
+    }
+
+    public function store(Request $request){
+
+        $formData = $request->all();
+
+        $plant =new Plant();
+        $plant->name =$formData["name"];
+        $plant->species =$formData["species"];
+        $plant->habitat =$formData["habitat"];
+        $plant->exposure =$formData["exposure"];
+        $plant->description =$formData["description"];
+        $plant->image =$formData["image"];
+        $plant->save();
+
+
+        return redirect()->route("plants.show", ["id"=>$plant->id]);
+    }
 }
