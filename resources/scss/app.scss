@@ -1,1 +1,11 @@
 @use "~bootstrap/scss/bootstrap" as *;
+
+.card-body{
+    height: 350px;
+    align-items: center;
+}
+
+img{
+    max-height: 100%;
+    max-width: 100%;
+}
