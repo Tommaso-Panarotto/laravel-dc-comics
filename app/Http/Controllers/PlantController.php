@@ -35,6 +35,6 @@ class PlantController extends Controller
         $plant->save();
 
 
-        return redirect()->route("plants.show", ["id"=>$plant->id]);
+        return redirect()->route("plant.show", ["id"=>$plant->id]);
     }
 }

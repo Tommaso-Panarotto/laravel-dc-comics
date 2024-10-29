@@ -19,6 +19,6 @@ Route::get('/', function () {
 });
 
 Route::get("/plants", [PlantController::class, "index"])->name("plant.index");
-Route::get("/plants", [PlantController::class, "store"])->name("plant.store");
+Route::post("/plants", [PlantController::class, "store"])->name("plant.store");
 Route::get("/plants/create", [PlantController::class, "create"])->name("plant.create");
 Route::get("/plants/{id}", [PlantController::class, "show"])->name("plant.show");
