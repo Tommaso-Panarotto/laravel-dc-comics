@@ -22,3 +22,5 @@ Route::get("/plants", [PlantController::class, "index"])->name("plant.index");
 Route::post("/plants", [PlantController::class, "store"])->name("plant.store");
 Route::get("/plants/create", [PlantController::class, "create"])->name("plant.create");
 Route::get("/plants/{id}", [PlantController::class, "show"])->name("plant.show");
+Route::get("/plants/{id}/edit", [PlantController::class, "edit"])->name("plant.edit");
+Route::put("/plants/{id}", [PlantController::class, "update"])->name("plant.update");
