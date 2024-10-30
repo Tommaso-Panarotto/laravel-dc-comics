@@ -45,4 +45,12 @@ class PlantController extends Controller
 
         return redirect()->route("plant.show", ["id"=>$plant->id]);
     }
+
+    public function destroy(string $id){
+        $plant = Plant::findOrFail($id);
+
+        $plant->delete();
+
+        return redirect()->route("plant.index");
+    }
 }
