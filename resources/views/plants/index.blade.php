@@ -33,3 +33,7 @@
 </div>
 </div>
 @endsection
+
+@section("script-js")
+   @vite("resources/js/plant.js")
+@endsection
