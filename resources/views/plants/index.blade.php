@@ -15,7 +15,13 @@
       <div class="card-body">
           <img src="{{$plant->image}}" alt="{{$plant->name}}">
     </div>
-    <a href="#" class="btn btn-danger">Elimina</a>
+    <form action="{{ route("plant.delete", $plant->id)}}" class="btn btn-danger p-0" method="POST" class="d-inline" custom-data-id="{{$plant->id}}">
+        @csrf
+        @method("DELETE")
+        <button type="submit" class="text-white w-100 border-0 bg-transparent rounded-2">
+            Elimina
+        </button>
+    </form>
   </div>
 </a>
 </div>
