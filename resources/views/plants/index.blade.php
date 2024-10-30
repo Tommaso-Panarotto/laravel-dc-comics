@@ -4,7 +4,7 @@
 
 @section("main-content")
 <div class="container text-center">
-<h2>Plants</h2>
+<h2>Piante</h2>
 <a href="{{route("plant.create")}}" class="btn btn-primary mt-5">aggiungi nuova pianta</a>
 <div class="row g-3 mt-5">
 @forelse ($plants as $plant )
@@ -15,6 +15,7 @@
       <div class="card-body">
           <img src="{{$plant->image}}" alt="{{$plant->name}}">
     </div>
+    <a href="#" class="btn btn-danger">Elimina</a>
   </div>
 </a>
 </div>
