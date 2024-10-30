@@ -25,15 +25,23 @@ class PlantController extends Controller
 
         $formData = $request->all();
 
-        $plant =new Plant();
-        $plant->name =$formData["name"];
-        $plant->species =$formData["species"];
-        $plant->habitat =$formData["habitat"];
-        $plant->exposure =$formData["exposure"];
-        $plant->description =$formData["description"];
-        $plant->image =$formData["image"];
-        $plant->save();
+        $plant = Plant::create($formData);
 
+
+        return redirect()->route("plant.show", ["id"=>$plant->id]);
+    }
+
+    public function edit(string $id){
+       $plant = Plant::findOrFail($id);
+        return view("plants.edit", compact("plant"));
+    }
+
+    public function update(string $id, Request $request){
+        $formData = $request->all();
+
+        $plant = Plant::findOrFail($id);
+
+        $plant->update($formData);
 
         return redirect()->route("plant.show", ["id"=>$plant->id]);
     }
