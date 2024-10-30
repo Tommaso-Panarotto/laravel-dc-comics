@@ -17,6 +17,7 @@
             <li><b>descrizione:</b> {{$plant["description"]}}</li>
           </ul>
         </div>
+        <a href="#" class="btn btn-success">Modifica</a>
       </div>
     </div>
   </div>
