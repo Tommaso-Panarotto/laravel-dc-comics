@@ -24,3 +24,4 @@ Route::get("/plants/create", [PlantController::class, "create"])->name("plant.cr
 Route::get("/plants/{id}", [PlantController::class, "show"])->name("plant.show");
 Route::get("/plants/{id}/edit", [PlantController::class, "edit"])->name("plant.edit");
 Route::put("/plants/{id}", [PlantController::class, "update"])->name("plant.update");
+Route::delete("/plants/{id}", [PlantController::class, "destroy"])->name("plant.delete");
