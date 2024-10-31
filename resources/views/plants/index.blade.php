@@ -15,7 +15,7 @@
       <div class="card-body">
           <img src="{{$plant->image}}" alt="{{$plant->name}}">
     </div>
-    <form action="{{ route("plant.delete", $plant->id)}}" class="btn btn-danger p-0" method="POST" class="d-inline" custom-data-id="{{$plant->id}}">
+    <form action="{{ route("plant.delete", $plant->id)}}" class="btn btn-danger p-0 d-inline plant-delete" method="POST" custom-data-name="{{$plant->name}}">
         @csrf
         @method("DELETE")
         <button type="submit" class="text-white w-100 border-0 bg-transparent rounded-2">
