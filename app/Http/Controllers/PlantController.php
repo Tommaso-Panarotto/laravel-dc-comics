@@ -23,6 +23,15 @@ class PlantController extends Controller
 
     public function store(Request $request){
 
+        $request->validate([
+            "name"=> "required|string|min:3|max:20",
+            "species"=> "required|string|min:3|max:20",
+            "habitat"=> "required|string|min:3|max:40",
+            "exposure"=> "required|string|min:3|max:30",
+            "description"=> "required|min:20|max:200",
+            "image"=> "required|url"
+            ]);
+
         $formData = $request->all();
 
         $plant = Plant::create($formData);
