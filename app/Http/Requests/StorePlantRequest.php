@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class StorePlantRequest extends FormRequest
 {
@@ -22,14 +23,12 @@ class StorePlantRequest extends FormRequest
     public function rules(): array
     {
         return [
-            [
                 "name"=> "required|string|min:3|max:20",
                 "species"=> "required|string|min:3|max:20",
                 "habitat"=> "required|string|min:3|max:40",
                 "exposure"=> "required|string|min:3|max:30",
                 "description"=> "required|min:20|max:200",
                 "image"=> "required|url"
-                ]
         ];
     }
 

@@ -22,9 +22,9 @@ class PlantController extends Controller
         return view("plants.create");
     }
 
-    public function store(StorePlantRequest $request){
+    public function store( StorePlantRequest $request){
 
-       $formData = $request->validated();
+       $formData = $request->validate();
 
 
         $plant = Plant::create($formData);
