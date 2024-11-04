@@ -32,4 +32,15 @@ class StorePlantRequest extends FormRequest
                 ]
         ];
     }
+
+    public function messages(){
+       return [
+        "name.min" => "il nome deve essere almeno lungo 3 caratteri",
+        "species.min" => "la specie deve essere almeno lunga 3 caratteri",
+        "habitat.min" => "habitat deve essere almeno lungo 3 caratteri",
+        "exposure.min" => "l'esposzione deve essere almeno lunga 3 caratteri",
+        "description.min" => "la descrizione deve essere almeno lunga 20 caratteri",
+       ];
+
+    }
 }

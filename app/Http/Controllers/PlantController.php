@@ -24,9 +24,8 @@ class PlantController extends Controller
 
     public function store(StorePlantRequest $request){
 
-        $request->validate();
+       $formData = $request->validated();
 
-        $formData = $request->all();
 
         $plant = Plant::create($formData);
 
@@ -39,18 +38,9 @@ class PlantController extends Controller
         return view("plants.edit", compact("plant"));
     }
 
-    public function update(string $id, Request $request){
+    public function update(string $id, StorePlantRequest $request){
 
-        $request->validate([
-            "name"=> "required|string|min:3|max:20",
-            "species"=> "required|string|min:3|max:20",
-            "habitat"=> "required|string|min:3|max:40",
-            "exposure"=> "required|string|min:3|max:30",
-            "description"=> "required|min:20|max:200",
-            "image"=> "required|url"
-            ]);
-
-        $formData = $request->all();
+        $formData =  $request->validated();
 
         $plant = Plant::findOrFail($id);
 
