@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StorePlantRequest;
 use App\Models\Plant;
 use Illuminate\Http\Request;
 
@@ -21,16 +22,9 @@ class PlantController extends Controller
         return view("plants.create");
     }
 
-    public function store(Request $request){
+    public function store(StorePlantRequest $request){
 
-        $request->validate([
-            "name"=> "required|string|min:3|max:20",
-            "species"=> "required|string|min:3|max:20",
-            "habitat"=> "required|string|min:3|max:40",
-            "exposure"=> "required|string|min:3|max:30",
-            "description"=> "required|min:20|max:200",
-            "image"=> "required|url"
-            ]);
+        $request->validate();
 
         $formData = $request->all();
 
